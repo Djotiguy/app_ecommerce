@@ -64,7 +64,7 @@ export default function RecapPanier() {
 
   return basket ? (
     <>
-      <div className="bg-white">
+      <div className="dark:bg-slate-900 bg-slate-400">
         <main className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Récapitulatif de la commande
@@ -83,14 +83,14 @@ export default function RecapPanier() {
                     <p className="text-sm font-semibold leading-6 text-gray-900">
                       Status de la commande :{" "}
                     </p>
-                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">
+                    <p className="mt-1 truncate text-xl leading-5 dark:text-slate-400 text-gray-500">
                       {product.name}
                     </p>
                   </div>
                 </div>
 
                 <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                  <p className="text-sm leading-6 text-gray-900">
+                  <p className="text-xl leading-6 dark:text-slate-400 text-gray-900">
                     {product.price}€
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function RecapPanier() {
                 <button
                   onClick={addOrder}
                   type="submit"
-                  className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover-bg-indigo-700 focus:outline-none focus-ring-2 focus-ring-indigo-500 focus-ring-offset-2 focus-ring-offset-gray-50"
+                  className="w-full rounded-md border border-transparent bg-orange-200 px-4 py-3 text-base font-medium text-white shadow-sm hover-bg-indigo-700 focus:outline-none focus-ring-2 focus-ring-indigo-500 focus-ring-offset-2 focus-ring-offset-gray-50"
                 >
                   Commander
                 </button>

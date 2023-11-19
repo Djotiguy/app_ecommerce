@@ -56,10 +56,7 @@ export default function Panier() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    window.location = "/recap-panier/";
-  }
 
-  function addPanier() {
     const basketFromSession = JSON.parse(sessionStorage.getItem("basket"));
   
     if (basketFromSession) {
@@ -98,14 +95,14 @@ export default function Panier() {
     } else {
       console.error('Aucune donnée de panier dans le sessionStorage.');
     }
-  }  
-  
+    window.location = "/recap-panier/";
+  }
 
   return (
     <>
-      <div className="bg-white">
+      <div className="dark:bg-slate-900 bg-slate-400">
         <main className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight dark:text-slate-400 text-gray-900 sm:text-4xl">
             Liste d'articles
           </h1>
 
@@ -129,16 +126,16 @@ export default function Panier() {
                       <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                         <div>
                           <div className="flex justify-between">
-                            <h3 className="text-sm">{product.name}</h3>
+                            <h3 className="text-xl dark:text-slate-400 text-slate-900">{product.name}</h3>
                           </div>
-                          <p className="mt-1 text-sm font-medium text-gray-900">
-                            {product.price}
+                          <p className="mt-1 font-medium  dark:text-slate-400 text-xl text-gray-900">
+                            {product.price}€
                           </p>
                         </div>
 
                         <div className="mt-4 sm:mt-0 sm:pr-9">
                           <select
-                            className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                            className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5  dark:text-slate-400 text-xl text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                             value={product.quantite || 1}
                             onChange={(e) => {
                               const newquantite = parseInt(e.target.value, 10);
@@ -185,18 +182,17 @@ export default function Panier() {
 
               <dl className="mt-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <dt className="text-sm text-gray-600">Sous-total</dt>
-                  <dd className="text-sm font-medium text-gray-900">
-                    {Number(sessionStorage.getItem("totalPrice")).toFixed(2)}
+                  <dt className=" text-xl text-gray-600">Sous-total</dt>
+                  <dd className="font-medium  text-xl text-gray-900">
+                    {Number(sessionStorage.getItem("totalPrice")).toFixed(2)}€
                   </dd>
                 </div>
               </dl>
 
               <div className="mt-6">
                 <button
-                onClick={addPanier}
                   type="submit"
-                  className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover-bg-indigo-700 focus:outline-none focus-ring-2 focus-ring-indigo-500 focus-ring-offset-2 focus-ring-offset-gray-50"
+                  className="w-full rounded-md border border-transparent bg-orange-200 px-4 py-3 text-base font-medium text-white shadow-sm hover-bg-indigo-700 focus:outline-none focus-ring-2 focus-ring-indigo-500 focus-ring-offset-2 focus-ring-offset-gray-50"
                 >
                   Valider
                 </button>

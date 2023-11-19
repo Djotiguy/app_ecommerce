@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <>
       <div id="gallery" className="max-w-[1140px] m-auto w-full px-4 py-16">
-        <h1 className="text-center text-gray-700 p-4 text-3xl"> HOME </h1>
+        <h1 className="text-center text-gray-700 p-4 text-3xl"> MVP E-COMMERCE </h1>
       </div>
 
       <div className="grid sm:grid-cols-5 gap-4">

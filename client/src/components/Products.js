@@ -20,7 +20,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="bg-white">
+      <div className="dark:bg-slate-900 bg-slate-400">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             Nos Nouveautés
@@ -39,14 +39,14 @@ const Products = () => {
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-gray-700">
+                    <h3 className="text-sm text-slate-400">
                       <a href={prod.href}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {prod.name}
                       </a>
                     </h3>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-sm font-medium text-slate-400">
                     {prod.price}€
                   </p>
                 </div>
