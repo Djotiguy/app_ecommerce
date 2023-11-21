@@ -7,7 +7,6 @@ import NoPage from "./components/NoPage";
 import Panier from "./components/Panier";
 import RecapPanier from "./components/RecapPanier";
 import Orders from "./components/Orders";
-import Example from "./components/Example";
 import Nav from "./components/layout/Nav";
 import Footer from "./components/layout/Footer";
 
@@ -25,7 +24,6 @@ function App() {
           <Route path="/panier" element={<Panier />} />
           <Route path="/recap-panier" element={<RecapPanier />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/example" element={<Example />} />
         </Routes>
         <Footer />
       </BrowserRouter>

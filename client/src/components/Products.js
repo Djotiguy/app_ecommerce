@@ -39,14 +39,14 @@ const Products = () => {
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-slate-400">
+                    <h3 className="text-xl dark:text-slate-400  text-slate-900">
                       <a href={prod.href}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {prod.name}
                       </a>
                     </h3>
                   </div>
-                  <p className="text-sm font-medium text-slate-400">
+                  <p className="text-xl font-medium dark:text-slate-400  text-slate-900">
                     {prod.price}€
                   </p>
                 </div>

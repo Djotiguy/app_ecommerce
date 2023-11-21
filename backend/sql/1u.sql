@@ -12,7 +12,7 @@ create table if not exists public.products(
 create table if not exists public.commande(
   id bigserial primary key,
   status citext not null,
-  prix_total float not null,
+  total_price float not null,
   created_at timestamp default now(),
   updated_at timestamp default now()
 );

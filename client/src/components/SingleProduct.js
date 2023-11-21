@@ -50,8 +50,8 @@ export default function Product() {
                   <button
                     type="submit"
                     onClick={addProduct}
-                    className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-orange-200 px-8 py-3 text-base font-medium dark:text-slate-400 text-white hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
-                  >
+                    className="rounded-md border border-transparent bg-orange-200 px-4 py-3 text-base font-medium text-white shadow-sm hover-bg-indigo-700 focus:outline-none focus-ring-2 focus-ring-indigo-500 focus-ring-offset-2 focus-ring-offset-gray-50"
+                    >
                     Ajouter au panier
                   </button>
                 </div>

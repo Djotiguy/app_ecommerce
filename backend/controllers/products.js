@@ -1,5 +1,6 @@
 import { sql } from "../db.js";
 
+// Récupère tous nos products.
 export async function getProducts(_, res) {
   try {
     const products = await sql("SELECT * FROM products");
@@ -8,7 +9,7 @@ export async function getProducts(_, res) {
     res.status(400).json({ error: "Bad request" });
   }
 }
-
+// Récupère un product.
 export async function getOneProduct(req, res) {
   try {
     const productId = req.params.id;

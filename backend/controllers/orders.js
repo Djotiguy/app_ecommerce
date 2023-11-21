@@ -1,5 +1,6 @@
 import { sql } from "../db.js";
 
+// Function qui récupère toutes les commande validées
 export async function getOrders(_, res) {
   try {
     const orders = await sql("SELECT * FROM commande");
@@ -9,6 +10,7 @@ export async function getOrders(_, res) {
   }
 }
 
+// Function récupère une commande par son id
 export async function getAnOrder(req, res) {
   try {
     const orderId = req.params.id;
@@ -24,17 +26,16 @@ export async function getAnOrder(req, res) {
   }
 }
 
+// function qui ajoute une commande
 export async function addOrder(req, res) {
   try {
     const price = req.body.price;
-    const status = "validate"; // Vous pouvez définir la valeur du statut ici
+    const status = "validate"; 
+    const userId = 1;
 
-    // Utilisez un paramètre lié pour éviter les injections SQL
-
-   const query = `INSERT INTO commande (status, prix_total) VALUES ('${status}', ${price}) RETURNING *`
+   const query = `INSERT INTO commande (user_id, status, total_price) VALUES ('${userId}','${status}', ${price}) RETURNING *`
         
-    // Exécutez la requête SQL avec les paramètres liés
-    const order = await sql(query, [status, price]);
+    const order = await sql(query, [userId, status, price]);
 
     console.log('Order validated');
     return res.status(200).json(order);
