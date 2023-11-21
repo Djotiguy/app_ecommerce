@@ -31,11 +31,10 @@ export async function addOrder(req, res) {
   try {
     const price = req.body.price;
     const status = "validate"; 
-    const userId = 1;
 
-   const query = `INSERT INTO commande (user_id, status, total_price) VALUES ('${userId}','${status}', ${price}) RETURNING *`
+   const query = `INSERT INTO commande (user_id, status, total_price) VALUES (${status}', ${price}) RETURNING *`
         
-    const order = await sql(query, [userId, status, price]);
+    const order = await sql(query, [status, price]);
 
     console.log('Order validated');
     return res.status(200).json(order);

@@ -1,3 +1,3 @@
-drop table commande;
-drop table products;
+drop table commande CASCADE;
+drop table products CASCADE;
 drop extension citext;

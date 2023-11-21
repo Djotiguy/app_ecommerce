@@ -11,6 +11,7 @@ const Products = () => {
       try {
         const response = await axios.get(url);
         setProducts(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
